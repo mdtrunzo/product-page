@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.google.com/specimen/Kumbh+Sans"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <title>E-commerce product page</title>
+  </head>
+  <body class="relative">
+    <!-- Nav -->
+    <nav
+      class="container relative mx-auto p-6 border-solid border-grayishBlue border-b-2"
+    >
+      <div class="flex items-center justify-between">
+        <img src="images/logo.svg" alt="" class="" />
+        <div class="hidden space-x-6 md:flex">
+          <p
+            class="text-sm text-grayishBlue cursor-pointer hover:text-veryVarkBlue"
+          >
+            Collections
+          </p>
+          <p
+            class="text-sm text-grayishBlue cursor-pointer hover:text-veryVarkBlue"
+          >
+            Men
+          </p>
+          <p
+            class="text-sm text-grayishBlue cursor-pointer hover:text-veryVarkBlue"
+          >
+            Women
+          </p>
+          <p
+            class="text-sm text-grayishBlue cursor-pointer hover:text-veryVarkBlue"
+          >
+            About
+          </p>
+          <p
+            class="text-sm text-grayishBlue cursor-pointer hover:text-veryVarkBlue"
+          >
+            Contact
+          </p>
+        </div>
+        <div class="flex justify-around items-center space-x-6">
+          <div class="relative">
+            <img
+              src="images/icon-cart.svg"
+              alt=""
+              class="cursor-pointer transition duration-200 ease-out hover:scale-125"
+            />
+            <span
+              id="cart-amount"
+              class="absolute bottom-2 left-4 bg-orange text-sm text-paleOrange p-1 rounded-full"
+              >0</span
+            >
+          </div>
+          <img
+            src="images/image-avatar.png"
+            alt=""
+            class="w-8 cursor-pointer transition duration-200 ease-out hover:scale-125"
+          />
+        </div>
+      </div>
+    </nav>
+
+    <!-- Product View-->
+    <section class="container mx-auto p-6">
+      <div class="flex flex-col w-full justify-between md:flex-row">
+        <!-- Images -->
+        <div class="flex flex-col w-full space-y-6 md:w-1/2">
+          <img
+            src="images/image-product-1.jpg"
+            alt=""
+            class="rounded-lg cursor-pointer"
+            id="img"
+          />
+          <div class="flex justify-between">
+            <img
+              src="images/image-product-1-thumbnail.jpg"
+              alt=""
+              class="w-1/5 m-2 rounded-lg cursor-pointer"
+            />
+            <img
+              src="images//image-product-2-thumbnail.jpg"
+              alt=""
+              class="w-1/5 m-2 rounded-lg cursor-pointer"
+            />
+            <img
+              src="images/image-product-3-thumbnail.jpg"
+              alt=""
+              class="w-1/5 m-2 rounded-lg cursor-pointer"
+            />
+            <img
+              src="images//image-product-4-thumbnail.jpg"
+              alt=""
+              class="w-1/5 m-2 rounded-lg cursor-pointer"
+            />
+          </div>
+        </div>
+        <!--Description-->
+        <div
+          id="product-content"
+          class="flex flex-col p-14 space-y-6 text-center w-full md:w-1/2 md:text-left"
+        >
+          <h3 class="text-sm font-bold text-orange">SNEAKER COMPANY</h3>
+          <h1 class="font-bold text-4xl">Fall Limited Edition Sneakers</h1>
+          <p class="text-sm text-grayishBlue">
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they’ll withstand everything
+            the weather can offer.
+          </p>
+          <div>
+            <div class="flex space-x-4">
+              <p class="font-bold text-2xl">$125.00</p>
+              <span
+                class="p-2 bg-paleOrange text-orange font-bold rounded-lg text-sm"
+                >50%</span
+              >
+            </div>
+            <span class="text-sm text-grayishBlue line-through">$250.00</span>
+          </div>
+          <div>
+            <div class="flex justify-around items-center w-full">
+              <div
+                class="flex justify-between items-center mr-4 w-2/5 bg-lightGrayishBlue p-4 rounded-lg shadow-lg"
+              >
+                <img
+                  src="images/icon-minus.svg"
+                  alt=""
+                  class="cursor-pointer"
+                  id="minus"
+                />
+                <span id="amount">0</span>
+                <img
+                  src="images/icon-plus.svg"
+                  alt=""
+                  class="cursor-pointer"
+                  id="plus"
+                />
+              </div>
+              <div
+                class="flex justify-around bg-orange w-3/5 text-white p-4 rounded-lg cursor-pointer shadow-2xl shadow-orange"
+              >
+                <img src="images/icon-cart.svg" alt="" class="w-5" />
+                <p class="text-sm font-bold" id="add-cart">Add to cart</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <section
+      class="hidden absolute top-0 bottom-0 m-auto bg-Black w-full"
+      id="lightbox"
+    >
+      <div class="relative">
+        <img
+          src="images/image-product-1.jpg"
+          alt=""
+          class="w-1/3 absolute top-96 bottom-0 left-0 right-0 m-auto"
+        />
+        <div
+        id="close"
+          class="w-1/3 absolute top-96 bottom-0 left-0 right-0 m-auto bg-orange text-white cursor-pointer"
+        >
+          CLOSE
+        </div>
+      </div>
+    </section>
+
+    <script src="index.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+  </body>
+</html>
